@@ -6,7 +6,7 @@
 
 ### how to run runsim_sim:
 ```bash
-./runsim_sim . config/base1
+./runsim_sim . base1
 ```
 
 ### how to calculate $CPI_0$:
