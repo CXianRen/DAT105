@@ -9,8 +9,11 @@ import glob
 # app_list = ["dijkstra", "gsm-untoast", "jpeg-cjpeg", "qsort", "stringsearch-cabce"]
 
 # dijkstra
-base_cpi_time = 8.8859
-
+# base_cpi_time = 8.8859
+# gsm
+base_cpi_time = 3.3702
+# string 
+# base_cpi_time = 17.7021
 
 
 def get_info(file):
@@ -60,10 +63,13 @@ def get_block(s:str):
     return int(s.split('_')[-1].replace('B',''))
     
 
-file_list =glob.glob("configs/Lab1-Task2/Stats_base1_*_S32_*B8")
-file_list.sort(key=sort_by_size)
+file_list =glob.glob("configs/Lab1-Task2/Stats_base1*_S*_A*_*_B*")
+file_list = sorted(file_list, key=lambda x:(get_size(x), get_associativity(x), get_block(x)))
 # file_list.sort()
 # print(file_list)
+header = "Cache size,Associativity,Block size,Speed up"
+print(header)
 for file in file_list:
     info = get_info(file)
-    print(file.split('/')[-1], info[-1])
+    S,A,L,B= file.split('/')[-1].split('_')[-4:]
+    print(S.replace('S',''),A.replace('A',''),B.replace('B','') , info[-1],sep=',')

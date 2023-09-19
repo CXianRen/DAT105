@@ -22,7 +22,7 @@ rm -rf  ${SHOME}/configs/${DIR}/Stats*
 # sets = Size/assic/bsize;
 
 # # l1 data cache config, i.e., {<config>|none}
-# -cache:dl1             dl1:64:32:2:l 
+# -cache:d1             dl1:64:32:2:l 
 
 # # l1 data cache hit latency (in cycles)
 # -cache:dl1lat  
@@ -45,9 +45,19 @@ for cache_size in "${cache_size_list[@]}"; do
             echo "cache size: $cache_size, associativity: $associativity, latency:$latency, block size: $block_size"
             let "sets=cache_size*1024/associativity/block_size"
             parameters="-cache:dl1 dl1:$sets:$block_size:$associativity:l -cache:dl1lat $latency"
-            ${SIM} ${CONFIG} ${parameters} \
-                -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_dijkstra.txt_S${cache_size}_A${associativity}_L${latency}_B${block_size} \
-                ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat 
+            # ${SIM} ${CONFIG} ${parameters} \
+            #     -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}g.txt_S${cache_size}_A${associativity}_L${latency}_B${block_size} \
+            #     ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat 
+
+            ${SIM} ${CONFIG} ${parameters} -redir:sim \
+            ${SHOME}/configs/${DIR}/Stats_${CFG}.txt_S${cache_size}_A${associativity}_L${latency}_B${block_size} \
+            ${SHOME}/apps/gsm-untoast/untoast \
+            -fps -c ${SHOME}/apps/gsm-untoast/small.au.run.gsm > ${SHOME}/configs/${DIR}/gsm-untoast-output_small.decode.run
+
+            # ${SIM} ${CONFIG} ${parameters} -redir:sim \
+            # ${SHOME}/configs/${DIR}/Stats_${CFG}.txt_S${cache_size}_A${associativity}_L${latency}_B${block_size} \
+            # ${SHOME}/apps/stringsearch/search_small  
+
         done
     done
 done
