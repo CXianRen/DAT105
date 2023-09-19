@@ -12,3 +12,22 @@
 ### how to calculate $CPI_0$:
 
 + just set memory access lantency as 0
+
+
+
+### what is associativity
+
+
+###
+cache size, associativity, block szie,
+
+2 application,
+
+
+cache config (from simple scaler ref.pdf)
+
++ name cache name
++ nsets : number of sets in the cache.
++ bsize : block size
++ assic : associativity of the cache (power of two)
++ repl  : replacement policy (l|f|r), l=LRU, f= FIFO, r=rando replacement

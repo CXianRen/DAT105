@@ -1,0 +1,60 @@
+# !/bin/bash
+# set -x 
+set -e 
+SHOME="."
+CFG='base1'
+DIR='Lab1-Task2'
+SIM="${SHOME}/bin/sim-outorder"
+
+CONFIG=" -config ${SHOME}/configs/${DIR}/${CFG}.txt "
+
+# clean old data before starting a new test
+rm -rf  ${SHOME}/configs/${DIR}/Stats*
+
+# parameters="-cache:il1 none -cache:dl1 none -mem:lat 1 1 "
+
+# + name cache name
+# + nsets : number of sets in the cache.
+# + bsize : block size
+# + assic : associativity of the cache (power of two)
+# + repl  : replacement policy (l|f|r), l=LRU, f= FIFO, r=rando replacement
+
+# sets = Size/assic/bsize;
+
+# # l1 data cache config, i.e., {<config>|none}
+# -cache:dl1             dl1:64:32:2:l 
+
+# # l1 data cache hit latency (in cycles)
+# -cache:dl1lat  
+
+parameters=""
+
+
+cache_size_list=(4 8 16 32) #KB
+block_size_list=(8 16 32 64 128 512) #Byte
+associativity_list=(1 2 4 8)
+cache_lentency=(1 1 2 2 1 2 2 3 2 2 3 3 2 3 3 4)
+
+cache_lentency_index=0
+for cache_size in "${cache_size_list[@]}"; do 
+    for associativity in "${associativity_list[@]}"; do
+        latency=${cache_lentency[$cache_lentency_index]}
+        let "cache_lentency_index=cache_lentency_index+1"
+        # echo $latency $cache_lentency_index
+        for block_size in "${block_size_list[@]}"; do
+            echo "cache size: $cache_size, associativity: $associativity, latency:$latency, block size: $block_size"
+            let "sets=cache_size*1024/associativity/block_size"
+            parameters="-cache:dl1 dl1:$sets:$block_size:$associativity:l -cache:dl1lat $latency"
+            ${SIM} ${CONFIG} ${parameters} \
+                -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_dijkstra.txt_S${cache_size}_A${associativity}_L${latency}_B${block_size} \
+                ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat 
+        done
+    done
+done
+
+
+
+# echo running app dijkstra
+# ${SIM} ${CONFIG} ${parameters} \
+#     -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_dijkstra.txt ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat 
+
