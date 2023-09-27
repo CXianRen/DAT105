@@ -50,7 +50,7 @@ guidelines will be available on Canvas.
 
 
 + compare accuracy among dynamic predictors（xxx）
-+ compare the CPI?
++ compare the CPI? and SpeedUp
 
 # Task  
 ## step
@@ -60,3 +60,7 @@ guidelines will be available on Canvas.
   + doubling the table size for bimodal
   + doubling of the L1 and/or L2 size of 2-level
   + doubling of the table size of combined.
+
+
+# Task 2.1
++ run and check performance with different integer and multiper or divider ALU
