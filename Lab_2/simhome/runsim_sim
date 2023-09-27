@@ -1,0 +1,40 @@
+#!/bin/bash
+set -x 
+SHOME="."
+CFG=$1
+SIM="${SHOME}/bin/sim-outorder"
+
+CONFIG=" -config ${SHOME}/configs/${CFG}.txt "
+
+#config nottaken
+# parameters=""
+# DIR=${SHOME}/configs/nottaken
+
+#config bimod
+parameters="-bpred bimod -bpred:bimod 1024"
+DIR=${SHOME}/configs/bimod
+
+#config bimod doublling the table size
+# parameters="-bpred bimod -bpred:bimod 2048"
+# DIR=${SHOME}/configs/bimod_2048
+
+
+
+
+rm -rf $DIR
+mkdir -p $DIR
+
+echo running app dijkstra
+${SIM} ${CONFIG} $parameters -redir:sim $DIR/Stats_dijkstra.txt ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat &
+
+echo running app search_small
+${SIM} ${CONFIG} $parameters -redir:sim ${DIR}/Stats_stringsearch-cabce.txt ${SHOME}/apps/stringsearch/search_small  &
+
+# echo running app qsort
+# ${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_qsort.txt ${SHOME}/apps/qsort/qsort_small  ${SHOME}/apps/qsort/input_small.dat > ${SHOME}/configs/${DIR}/qsort_small-output.txt
+
+# echo running app gsm
+# ${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_gsm-untoast.txt ${SHOME}/apps/gsm-untoast/untoast -fps -c ${SHOME}/apps/gsm-untoast/small.au.run.gsm > ${SHOME}/configs/${DIR}/gsm-untoast-output_small.decode.run
+
+# echo running app jpeg
+# ${SIM}  ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_jpeg-cjpeg.txt ${SHOME}/apps/jpeg-cjpeg/cjpeg -dct int -progressive -opt -outfile ${SHOME}/configs/${DIR}/jpeg-cjpeg_output_small_encode.jpeg ${SHOME}/apps/jpeg-cjpeg/input_small.ppm
