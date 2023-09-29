@@ -1,0 +1,6 @@
+change:CPI:app,dijkstra_small, stringsearch-cabce,qsort_small,gsm-untoast,jpeg-cjpeg
+nottakne(default),8.8238,18.4604,15.1891,3.3774,5.9808
+comb_1024,7.4996,17.0565,12.4089,2.7349,5.1776
+ALU=8,7.4996,17.0565,12.4089,2.7349,5.1776
+IFQS=8 & RUUs=128 & LSQ=64, 6.672,16.8842,9.1327,2.5905,3.9303
+ISSUE=8 & DECODE=8 & COMMIT=8, 6.0752,16.0544,8.4329,1.7204,3.2065
