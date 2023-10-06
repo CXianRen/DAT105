@@ -1,0 +1,12 @@
+[SNIPER] Start
+[SNIPER] --------------------------------------------------------------------------------
+[SNIPER] Sniper using Pin frontend
+[SNIPER] Running full application in DETAILED mode
+[SNIPER] --------------------------------------------------------------------------------
+[SNIPER] Enabling performance models
+[SNIPER] Setting instrumentation mode to DETAILED
+[SNIPER] Disabling performance models
+[SNIPER] Leaving ROI after 8.94 seconds
+[SNIPER] Simulated 1.6M instructions, 9.5M cycles, 0.17 IPC
+[SNIPER] Simulation speed 180.7 KIPS (180.7 KIPS / target core - 5534.9ns/instr)
+[SNIPER] Setting instrumentation mode to FAST_FORWARD

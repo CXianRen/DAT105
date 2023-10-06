@@ -6,10 +6,24 @@
 [SNIPER] Enabling performance models
 [SNIPER] Setting instrumentation mode to DETAILED
 [SNIPER] Disabling performance models
-[SNIPER] Leaving ROI after 17.50 seconds
-[SNIPER] Simulated 23.2M instructions, 27.8M cycles, 0.83 IPC
-[SNIPER] Simulation speed 1324.4 KIPS (1324.4 KIPS / target core - 755.1ns/instr)
+[SNIPER] Leaving ROI after 20.65 seconds
+[SNIPER] Simulated 23.2M instructions, 34.9M cycles, 0.66 IPC
+[SNIPER] Simulation speed 1122.3 KIPS (1122.3 KIPS / target core - 891.0ns/instr)
 [SNIPER] Setting instrumentation mode to FAST_FORWARD
+                     Power     Energy    Energy %
+  core-core         1.18 W     0.02  J     16.10%
+  core-ifetch       0.21 W     3.70 mJ      2.89%
+  core-alu          0.16 W     2.84 mJ      2.22%
+  core-int          0.26 W     4.48 mJ      3.50%
+  core-fp           0.30 W     5.17 mJ      4.04%
+  core-mem          0.13 W     2.28 mJ      1.78%
+  core-other        0.26 W     4.59 mJ      3.59%
+  dram              4.75 W     0.08  J     64.81%
+  other             0.08 W     1.37 mJ      1.07%
+
+  core              2.50 W     0.04  J     34.12%
+  cache             0.00 W     0.00  J      0.00%
+  total             7.33 W     0.13  J    100.00%
 [SNIPER] End
-[SNIPER] Elapsed time: 21.05 seconds
+[SNIPER] Elapsed time: 24.19 seconds
 [SNIPER] Running McPAT

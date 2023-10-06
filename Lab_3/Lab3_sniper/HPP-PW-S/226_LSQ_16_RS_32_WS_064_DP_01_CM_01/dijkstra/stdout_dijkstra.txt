@@ -1,0 +1,49 @@
+[SNIPER] Start
+[SNIPER] --------------------------------------------------------------------------------
+[SNIPER] Sniper using Pin frontend
+[SNIPER] Running full application in DETAILED mode
+[SNIPER] --------------------------------------------------------------------------------
+[SNIPER] Enabling performance models
+[SNIPER] Setting instrumentation mode to DETAILED
+Shortest path is 1 in cost. Path is:  0 41 45 51 50
+Shortest path is 0 in cost. Path is:  1 58 57 20 40 17 65 73 36 46 10 38 41 45 51
+Shortest path is 1 in cost. Path is:  2 71 47 79 23 77 1 58 57 20 40 17 52
+Shortest path is 2 in cost. Path is:  3 53
+Shortest path is 1 in cost. Path is:  4 85 83 58 33 13 19 79 23 77 1 54
+Shortest path is 3 in cost. Path is:  5 26 23 77 1 58 99 3 21 70 55
+Shortest path is 3 in cost. Path is:  6 42 80 77 1 58 99 3 21 70 55 56
+Shortest path is 0 in cost. Path is:  7 17 65 73 36 46 10 58 57
+Shortest path is 0 in cost. Path is:  8 37 63 72 46 10 58
+Shortest path is 1 in cost. Path is:  9 33 13 19 79 23 77 1 59
+Shortest path is 0 in cost. Path is:  10 60
+Shortest path is 5 in cost. Path is:  11 22 20 40 17 65 73 36 46 10 29 61
+Shortest path is 0 in cost. Path is:  12 37 63 72 46 10 58 99 3 21 70 62
+Shortest path is 0 in cost. Path is:  13 19 79 23 77 1 58 99 3 21 70 55 12 37 63
+Shortest path is 1 in cost. Path is:  14 38 41 45 51 68 2 71 47 79 23 77 1 58 33 13 92 64
+Shortest path is 1 in cost. Path is:  15 13 92 94 11 22 20 40 17 65
+Shortest path is 3 in cost. Path is:  16 41 45 51 68 2 71 47 79 23 77 1 58 33 32 66
+Shortest path is 0 in cost. Path is:  17 65 73 36 46 10 58 33 13 19 79 23 91 67
+Shortest path is 1 in cost. Path is:  18 15 41 45 51 68
+Shortest path is 2 in cost. Path is:  19 69
+[SNIPER] Disabling performance models
+[SNIPER] Leaving ROI after 203.11 seconds
+[SNIPER] Simulated 77.6M instructions, 133.8M cycles, 0.58 IPC
+[SNIPER] Simulation speed 381.8 KIPS (381.8 KIPS / target core - 2619.0ns/instr)
+[SNIPER] Setting instrumentation mode to FAST_FORWARD
+[SNIPER] End
+[SNIPER] Elapsed time: 208.65 seconds
+[SNIPER] Running McPAT
+                     Power     Energy    Energy %
+  core-core         0.20 W     0.01  J      3.54%
+  core-ifetch       0.13 W     8.58 mJ      2.22%
+  core-alu          0.16 W     0.01  J      2.81%
+  core-int          0.14 W     9.64 mJ      2.49%
+  core-fp           0.30 W     0.02  J      5.13%
+  core-mem          0.12 W     7.96 mJ      2.06%
+  core-other        0.24 W     0.02  J      4.14%
+  dram              4.41 W     0.30  J     76.38%
+  other             0.07 W     4.77 mJ      1.23%
+
+  core              1.29 W     0.09  J     22.38%
+  cache             0.00 W     0.00  J      0.00%
+  total             5.78 W     0.39  J    100.00%

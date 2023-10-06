@@ -1,0 +1,29 @@
+[SNIPER] Start
+[SNIPER] --------------------------------------------------------------------------------
+[SNIPER] Sniper using Pin frontend
+[SNIPER] Running full application in DETAILED mode
+[SNIPER] --------------------------------------------------------------------------------
+[SNIPER] Enabling performance models
+[SNIPER] Setting instrumentation mode to DETAILED
+[SNIPER] Disabling performance models
+[SNIPER] Leaving ROI after 28.64 seconds
+[SNIPER] Simulated 23.2M instructions, 72.6M cycles, 0.32 IPC
+[SNIPER] Simulation speed 809.7 KIPS (809.7 KIPS / target core - 1235.1ns/instr)
+[SNIPER] Setting instrumentation mode to FAST_FORWARD
+[SNIPER] End
+[SNIPER] Elapsed time: 31.45 seconds
+[SNIPER] Running McPAT
+                     Power     Energy    Energy %
+  core-core         0.55 W     0.02  J      8.80%
+  core-ifetch       0.13 W     4.88 mJ      2.15%
+  core-alu          0.16 W     5.90 mJ      2.60%
+  core-int          0.21 W     7.68 mJ      3.39%
+  core-fp           0.30 W     0.01  J      4.74%
+  core-mem          0.08 W     2.73 mJ      1.21%
+  core-other        0.26 W     9.54 mJ      4.21%
+  dram              4.49 W     0.16  J     71.88%
+  other             0.06 W     2.33 mJ      1.03%
+
+  core              1.69 W     0.06  J     27.10%
+  cache             0.00 W     0.00  J      0.00%
+  total             6.24 W     0.23  J    100.00%

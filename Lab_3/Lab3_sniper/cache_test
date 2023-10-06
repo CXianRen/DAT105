@@ -1,0 +1,10 @@
+
+#### jpeg
+# BLOCK SIZE = 16
+IPC = 0.52
+
+# BLOCK SIZE = 32
+IPC = 0.66
+
+# BLOCK SIZE = 64 
+IPC = 0.86
